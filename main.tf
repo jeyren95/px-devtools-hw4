@@ -28,7 +28,7 @@ resource "aws_security_group_rule" "allow_ssh_access" {
 resource "aws_instance" "instance" {
     ami = var.ami_id   
     instance_type = var.instance_type
-    key_name = "hw4-key-pair"
+    key_name = var.key_name
     vpc_security_group_ids = [aws_security_group.app_firewall.id]
     tags = {
         Name = "px-devtools-hw4"
