@@ -6,6 +6,8 @@ data "aws_vpc" "default_vpc" {
     default = true
 }
 
+# create custom security group 
+# default rules for a newly created security group => allows no inbound traffic, allows all outbound traffic
 resource "aws_security_group" "app_firewall" {
     name = "app-firewall"
     description =  "Rules for app server"
